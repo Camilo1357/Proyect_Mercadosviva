@@ -1,0 +1,26 @@
+[
+  {
+    "file": "madrid.jpg",
+    "source": "https://unsplash.com/photos/IzYRPhdu3xc",
+    "download": "https://images.unsplash.com/photo-1603928087797-0e3eaa5cfc2d?auto=format&fit=crop&w=1000&h=700&q=85&fm=jpg",
+    "license": "https://unsplash.com/license"
+  },
+  {
+    "file": "cartagena.jpg",
+    "source": "https://unsplash.com/photos/acH94SHbWS4",
+    "download": "https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?auto=format&fit=crop&w=1000&h=700&q=85&fm=jpg",
+    "license": "https://unsplash.com/license"
+  },
+  {
+    "file": "medellin.jpg",
+    "source": "https://unsplash.com/photos/uz6ElCAmQtw",
+    "download": "https://images.unsplash.com/photo-1671240432065-2f6540c14709?auto=format&fit=crop&w=1000&h=700&q=85&fm=jpg",
+    "license": "https://unsplash.com/license"
+  },
+  {
+    "file": "lima.jpg",
+    "source": "https://unsplash.com/photos/hvFOVjfz8Pw",
+    "download": "https://images.unsplash.com/photo-1660521844005-015733ce411e?auto=format&fit=crop&w=1000&h=700&q=85&fm=jpg",
+    "license": "https://unsplash.com/license"
+  }
+]

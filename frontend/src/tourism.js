@@ -1,0 +1,13 @@
+import {esc,icon} from './utils/format.js';
+
+export function tourismResults(result){
+ if(result.status!=='ok')return '<section class="empty tourism-empty"><h2>'+(result.status==='clarification'?'Cuéntanos un poco más':'Probemos otra búsqueda')+'</h2><p>'+esc(result.message)+'</p><button class="secondary" data-action="refine-tourism">Cambiar mi búsqueda</button></section>';
+ const cities=[...new Set(result.activities.map(a=>a.city))];
+ return '<div class="explore-heading"><div><h2>Qué hacer en '+esc(result.destination)+'</h2><p>Ideas para tu viaje, con la información de sus fuentes.</p></div><span class="result-count" role="status">'+result.activities.length+' actividades</span></div><div class="tourism-filter"><label for="tourism-city">Explorar por ciudad</label><select id="tourism-city"><option value="">Todas las ciudades</option>'+cities.map(c=>'<option>'+esc(c)+'</option>').join('')+'</select></div><div class="tourism-grid">'+result.activities.map(a=>'<article class="activity-card" data-city="'+esc(a.city)+'" data-country="'+esc(a.country)+'"><div class="activity-image">'+(a.image_url?'<img src="'+esc(a.image_url)+'" alt="Imagen de la publicación: '+esc(a.source_title)+'" referrerpolicy="no-referrer" loading="lazy" width="640" height="400">':'')+'<span class="activity-image-fallback">'+icon('pin')+'<span>'+esc(a.city)+'</span></span></div><div class="activity-copy"><p class="activity-place">'+icon('pin')+esc(a.city)+', '+esc(a.country)+'</p><h3>'+esc(a.title)+'</h3><span class="activity-category">'+esc(a.category)+'</span><p>'+esc(a.description)+'</p><a href="'+esc(a.source_url)+'" target="_blank" rel="noopener noreferrer">Consultar actividad '+icon('arrow')+'<small>'+esc(new URL(a.source_url).hostname)+'</small></a></div></article>').join('')+'</div><p class="tourism-disclosure">Resultados organizados con IA a partir de fuentes web. Las fotos de respaldo muestran la ciudad y llevan su crédito; no necesariamente representan la actividad. Confirma los detalles de cada actividad en su fuente antes de planear tu visita.</p>';
+}
+
+export function tourismError(message){return '<section class="empty"><h2>No pudimos completar la búsqueda</h2><p>'+esc(message)+'</p><button class="primary" data-action="retry-tourism">Volver a buscar</button> <a class="secondary" href="#/library">Consultar las guías</a></section>';}
+
+// Missing/blocked remote images never break the card or use an unrelated photo.
+document.addEventListener('error',e=>{if(e.target.matches?.('.activity-image img'))e.target.hidden=true;},true);
+document.addEventListener('change',e=>{if(e.target.id==='tourism-city')document.querySelectorAll('.activity-card').forEach(card=>{card.hidden=Boolean(e.target.value&&card.dataset.city!==e.target.value);});});

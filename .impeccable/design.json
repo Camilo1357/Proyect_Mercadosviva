@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T23:09:15.849111+00:00",
+  "title": "Design System: Centro del viajero",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "displayName": "ink",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0144 204.67)",
+          "oklch(27% 0.0260 204.67)",
+          "oklch(39% 0.0375 204.67)",
+          "oklch(51% 0.0433 204.67)",
+          "oklch(63% 0.0433 204.67)",
+          "oklch(75% 0.0433 204.67)",
+          "oklch(87% 0.0225 204.67)",
+          "oklch(95% 0.0087 204.67)"
+        ]
+      },
+      "muted": {
+        "displayName": "muted",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0095 202.61)",
+          "oklch(27% 0.0171 202.61)",
+          "oklch(39% 0.0247 202.61)",
+          "oklch(51% 0.0286 202.61)",
+          "oklch(63% 0.0286 202.61)",
+          "oklch(75% 0.0286 202.61)",
+          "oklch(87% 0.0148 202.61)",
+          "oklch(95% 0.0057 202.61)"
+        ]
+      },
+      "paper": {
+        "displayName": "paper",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0014 121.56)",
+          "oklch(27% 0.0025 121.56)",
+          "oklch(39% 0.0035 121.56)",
+          "oklch(51% 0.0041 121.56)",
+          "oklch(63% 0.0041 121.56)",
+          "oklch(75% 0.0041 121.56)",
+          "oklch(87% 0.0021 121.56)",
+          "oklch(95% 0.0008 121.56)"
+        ]
+      },
+      "line": {
+        "displayName": "line",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0038 176.29)",
+          "oklch(27% 0.0069 176.29)",
+          "oklch(39% 0.0099 176.29)",
+          "oklch(51% 0.0115 176.29)",
+          "oklch(63% 0.0115 176.29)",
+          "oklch(75% 0.0115 176.29)",
+          "oklch(87% 0.0060 176.29)",
+          "oklch(95% 0.0023 176.29)"
+        ]
+      },
+      "teal": {
+        "displayName": "teal",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0261 185.45)",
+          "oklch(27% 0.0470 185.45)",
+          "oklch(39% 0.0678 185.45)",
+          "oklch(51% 0.0783 185.45)",
+          "oklch(63% 0.0783 185.45)",
+          "oklch(75% 0.0783 185.45)",
+          "oklch(87% 0.0407 185.45)",
+          "oklch(95% 0.0157 185.45)"
+        ]
+      },
+      "nav": {
+        "displayName": "nav",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0154 203.92)",
+          "oklch(27% 0.0278 203.92)",
+          "oklch(39% 0.0402 203.92)",
+          "oklch(51% 0.0463 203.92)",
+          "oklch(63% 0.0463 203.92)",
+          "oklch(75% 0.0463 203.92)",
+          "oklch(87% 0.0241 203.92)",
+          "oklch(95% 0.0093 203.92)"
+        ]
+      },
+      "soft": {
+        "displayName": "soft",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0033 164.86)",
+          "oklch(27% 0.0060 164.86)",
+          "oklch(39% 0.0087 164.86)",
+          "oklch(51% 0.0100 164.86)",
+          "oklch(63% 0.0100 164.86)",
+          "oklch(75% 0.0100 164.86)",
+          "oklch(87% 0.0052 164.86)",
+          "oklch(95% 0.0020 164.86)"
+        ]
+      },
+      "white": {
+        "displayName": "white",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(27% 0.0000 89.88)",
+          "oklch(39% 0.0000 89.88)",
+          "oklch(51% 0.0000 89.88)",
+          "oklch(63% 0.0000 89.88)",
+          "oklch(75% 0.0000 89.88)",
+          "oklch(87% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "error": {
+        "displayName": "error",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0510 23.61)",
+          "oklch(27% 0.0918 23.61)",
+          "oklch(39% 0.1326 23.61)",
+          "oklch(51% 0.1530 23.61)",
+          "oklch(63% 0.1530 23.61)",
+          "oklch(75% 0.1530 23.61)",
+          "oklch(87% 0.0796 23.61)",
+          "oklch(95% 0.0306 23.61)"
+        ]
+      },
+      "focus": {
+        "displayName": "focus",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0384 69.65)",
+          "oklch(27% 0.0691 69.65)",
+          "oklch(39% 0.0998 69.65)",
+          "oklch(51% 0.1152 69.65)",
+          "oklch(63% 0.1152 69.65)",
+          "oklch(75% 0.1152 69.65)",
+          "oklch(87% 0.0599 69.65)",
+          "oklch(95% 0.0230 69.65)"
+        ]
+      },
+      "primary-hover": {
+        "displayName": "primary-hover",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0213 185.81)",
+          "oklch(27% 0.0383 185.81)",
+          "oklch(39% 0.0554 185.81)",
+          "oklch(51% 0.0639 185.81)",
+          "oklch(63% 0.0639 185.81)",
+          "oklch(75% 0.0639 185.81)",
+          "oklch(87% 0.0332 185.81)",
+          "oklch(95% 0.0128 185.81)"
+        ]
+      },
+      "input-border": {
+        "displayName": "input-border",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0065 180.12)",
+          "oklch(27% 0.0117 180.12)",
+          "oklch(39% 0.0169 180.12)",
+          "oklch(51% 0.0195 180.12)",
+          "oklch(63% 0.0195 180.12)",
+          "oklch(75% 0.0195 180.12)",
+          "oklch(87% 0.0101 180.12)",
+          "oklch(95% 0.0039 180.12)"
+        ]
+      },
+      "nav-active": {
+        "displayName": "nav-active",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0068 169.32)",
+          "oklch(27% 0.0122 169.32)",
+          "oklch(39% 0.0176 169.32)",
+          "oklch(51% 0.0203 169.32)",
+          "oklch(63% 0.0203 169.32)",
+          "oklch(75% 0.0203 169.32)",
+          "oklch(87% 0.0106 169.32)",
+          "oklch(95% 0.0041 169.32)"
+        ]
+      },
+      "trip-surface": {
+        "displayName": "trip-surface",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0044 152.60)",
+          "oklch(27% 0.0080 152.60)",
+          "oklch(39% 0.0116 152.60)",
+          "oklch(51% 0.0133 152.60)",
+          "oklch(63% 0.0133 152.60)",
+          "oklch(75% 0.0133 152.60)",
+          "oklch(87% 0.0069 152.60)",
+          "oklch(95% 0.0027 152.60)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "Inter funcional",
+        "purpose": "Listas, formularios y lectura."
+      }
+    },
+    "shadows": [
+      {
+        "name": "toast",
+        "value": "0 8px 26px #0002",
+        "purpose": "Aviso flotante"
+      },
+      {
+        "name": "sidebar-open",
+        "value": "10px 0 30px #0002",
+        "purpose": "Menú móvil abierto"
+      }
+    ],
+    "motion": [
+      {
+        "name": "button",
+        "value": "background .15s",
+        "purpose": "Hover"
+      },
+      {
+        "name": "progress",
+        "value": "width .2s",
+        "purpose": "Avance"
+      },
+      {
+        "name": "sidebar",
+        "value": "transform .18s",
+        "purpose": "Menú móvil"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "1150px"
+      },
+      {
+        "name": "mobile-menu",
+        "value": "850px"
+      },
+      {
+        "name": "single-column",
+        "value": "600px"
+      },
+      {
+        "name": "wide-auth",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción primaria",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción primaria — muestra visual del CSS implementado.",
+      "html": "<button class=\"ds-primary\">Guardar mi viaje</button>",
+      "css": ".ds-primary{font-family:Inter,\"Segoe UI\",sans-serif;display:inline-flex;gap:12px;align-items:center;justify-content:center;min-height:44px;padding:11px 18px;border-radius:6px;font-weight:600;font-size:.9rem;border:1px solid transparent;transition:background .15s;cursor:pointer;background:var(--teal,#146b63);color:white}.ds-primary:hover{background:#0e514b}.ds-primary:disabled{opacity:.6;cursor:wait}:focus-visible{outline:3px solid #c4893f;outline-offset:4px}"
+    },
+    {
+      "name": "Acción secundaria",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción secundaria — muestra visual del CSS implementado.",
+      "html": "<button class=\"ds-secondary\">Cancelar</button>",
+      "css": ".ds-secondary{font-family:Inter,\"Segoe UI\",sans-serif;display:inline-flex;gap:12px;align-items:center;justify-content:center;min-height:44px;padding:11px 18px;border-radius:6px;font-weight:600;font-size:.9rem;border:1px solid transparent;transition:background .15s;cursor:pointer;background:transparent;border-color:#a9bfba;color:var(--ink,#173d41)}.ds-secondary:hover{background:var(--soft,#e7efeb)}:focus-visible{outline:3px solid #c4893f;outline-offset:4px}"
+    },
+    {
+      "name": "Campo con etiqueta",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo con etiqueta — muestra visual del CSS implementado.",
+      "html": "<label class=\"ds-label\">Correo electrónico<input class=\"ds-input\" type=\"email\" placeholder=\"tu@correo.com\"></label>",
+      "css": ".ds-label{font-family:Inter,\"Segoe UI\",sans-serif;display:flex;flex-direction:column;gap:9px;font-size:.88rem;font-weight:550;color:var(--ink,#173d41)}.ds-input{font:inherit;background:white;color:var(--ink,#173d41);border:1px solid #aebfbb;border-radius:5px;min-height:46px;padding:12px;caret-color:var(--teal,#146b63)}.ds-input::placeholder{color:var(--muted,#536b6d);opacity:1}:focus-visible{outline:3px solid #c4893f;outline-offset:4px}"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Navegación — muestra visual del CSS implementado.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a href=\"#/home\" aria-current=\"page\">Mi preparación</a><a href=\"#/trips\">Mis viajes</a></nav>",
+      "css": ".ds-nav{font-family:Inter,\"Segoe UI\",sans-serif;background:var(--nav,#153f43);padding:20px;display:flex;flex-direction:column;gap:7px}.ds-nav a{padding:12px 13px;font-size:.88rem;border-radius:6px;color:#d1e1dd;text-decoration:none}.ds-nav a:hover{background:#224c50}.ds-nav a[aria-current]{background:#dbece5;color:#153f43;font-weight:650}:focus-visible{outline:3px solid #c4893f;outline-offset:4px}"
+    },
+    {
+      "name": "Estado de solicitud",
+      "kind": "chip",
+      "refersTo": "status",
+      "description": "Estado de solicitud — muestra visual del CSS implementado.",
+      "html": "<span class=\"ds-state\">EN ATENCIÓN</span>",
+      "css": ".ds-state{font-family:Inter,\"Segoe UI\",sans-serif;display:inline-flex;padding:6px 10px;border-radius:4px;background:#e1eeef;color:#24656b;font-size:.74rem;font-weight:600;white-space:nowrap}:focus-visible{outline:3px solid #c4893f;outline-offset:4px}"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Panel — muestra visual del CSS implementado.",
+      "html": "<section class=\"ds-panel\"><h2>Un nuevo destino.</h2><p>Cuéntanos cuándo viajas.</p></section>",
+      "css": ".ds-panel{font-family:Inter,\"Segoe UI\",sans-serif;padding:30px;background:white;color:var(--ink,#173d41);border:1px solid var(--line,#d8e2df);border-radius:10px}.ds-panel h2{margin:0 0 12px;font-size:1.25rem;letter-spacing:-.02em;line-height:1.4}.ds-panel p{margin:0;line-height:1.65}:focus-visible{outline:3px solid #c4893f;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Preparación clara: Operate / Read",
+    "overview": "Centro del viajero conserva el logo Chambiray y la dirección existente: petróleo para navegar, superficies claras para trabajar y teal para actuar. La interfaz en español reúne preparación, lectura de guías y orientación humana con una jerarquía sobria.\n\nOperate organiza pendientes, formularios y solicitudes; Read reduce la densidad en artículos. Este documento captura la implementación del Sprint 1, sin inventar una marca ni añadir funciones de inteligencia artificial.",
+    "keyCharacteristics": [
+      "Navegación estable y acciones explícitas.",
+      "Listas con divisores y guías de lectura clara.",
+      "Estados expresados con texto y controles nativos."
+    ],
+    "rules": [],
+    "dos": [
+      "Do conservar el logo original Chambiray y el nombre Centro del viajero.",
+      "Do usar Inter como tipografía funcional y mantener etiquetas visibles.",
+      "Do conservar foco de teclado, estados de guardado y errores.",
+      "Do mostrar fecha, fuente y vigencia editorial cuando exista."
+    ],
+    "donts": [
+      "Don't añadir decoración genérica de IA ni presentar Sprint 2 como disponible.",
+      "Don't comunicar estados únicamente mediante color.",
+      "Don't inventar requisitos de viaje o afirmaciones de marca."
+    ]
+  }
+}
