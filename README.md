@@ -86,13 +86,13 @@ Ver `docs/verificacion.md` para resultados y limitaciones.
 
 1. Conecta el repositorio GitHub a tu cuenta Vercel y selecciona su raíz.
 2. Vercel debe detectar Flask y `app.py`. Python 3.13; dependencias en `requirements.txt`.
-3. Configura `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` y `APP_URL` con la URL definitiva.
+3. Configura `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `EXA_API_KEY`, `OPENAI_API_KEY`, `OPENAI_MODEL` y `APP_URL` (URL definitiva) como variables del servidor en Vercel. No subas el archivo `.env`.
 4. El comando `python build.py` copia recursos del frontend a `public/src` para el CDN.
 5. En Supabase Authentication / URL Configuration agrega la URL de Vercel al Site URL y Redirect URLs.
 6. Despliega y verifica acceso, confirmación de correo, checklist y atención con cuentas reales.
 
-`vercel.json` está preparado; todavía no se ha publicado ni vinculado un proyecto Vercel.
-No se ha hecho commit ni push: los cambios están en tu carpeta local.
+Aplicación publicada: https://centro-viajero.vercel.app . Proyecto Vercel: `ema-thyt/centro-viajero`. Despliegue mediante CLI; la conexión automática con GitHub requiere vincular la cuenta de GitHub en Vercel. Las variables del servidor están configuradas en Production y Preview. La confirmación de correo requiere agregar el dominio público a las URL permitidas de Supabase.
+Los cambios del Sprint 2 están publicados en la rama main de GitHub.
 
 ## Estructura
 
