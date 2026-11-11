@@ -5,6 +5,8 @@ from ..schemas import validation as v
 from ..services.auth import protected, staff
 from ..services.tourism import search as tourism_search
 from ..services.photos import city_photos
+from ..services.assistant import ask, history_input
+from ..services.preparation import overview
 import requests
 
 api = Blueprint("api", __name__)
@@ -22,7 +24,11 @@ def health():
 @api.post("/auth/login")
 def login():
     data=body()
-    return remote("POST", "/auth/v1/token?grant_type=password", payload={"email":v.text(data,"email",3,254),"password":v.text(data,"password",1,256)})
+    session = remote("POST", "/auth/v1/token?grant_type=password", payload={"email":v.text(data,"email",3,254),"password":v.text(data,"password",1,256)})
+    profile = one("profiles", session["user"]["id"], session["access_token"])
+    if not profile["active"] or profile["role"] not in ("agent", "editor"):
+        raise APIError("Esta cuenta no tiene acceso al equipo. Solicita su habilitación al administrador.", 403)
+    return session
 
 @api.post("/auth/guest")
 def guest():
@@ -46,6 +52,32 @@ def logout():
     remote("POST", "/auth/v1/logout", g.token)
     return {"ok":True}
 
+@api.post("/auth/password")
+@protected
+def change_password():
+    staff()
+    data = body()
+    current_password = data.get("current_password")
+    password = data.get("password")
+    if not isinstance(current_password, str) or not 1 <= len(current_password) <= 256:
+        raise APIError("Escribe tu contraseña actual.")
+    if not isinstance(password, str) or not 12 <= len(password) <= 256:
+        raise APIError("La nueva contraseña debe tener entre 12 y 256 caracteres.")
+    if password != data.get("confirmation"):
+        raise APIError("Las contraseñas nuevas no coinciden.")
+    if password == current_password:
+        raise APIError("Elige una contraseña diferente de la actual.")
+    verified = remote("POST", "/auth/v1/token?grant_type=password", payload={
+        "email": g.user["email"], "password": current_password
+    })
+    if verified.get("user", {}).get("id") != g.user["id"]:
+        raise APIError("No pudimos verificar tu cuenta.", 403)
+    try:
+        remote("PUT", "/auth/v1/user", verified["access_token"], {"password": password})
+    except APIError:
+        raise APIError("No pudimos cambiar la contraseña. Revisa que cumpla los requisitos y vuelve a intentarlo.", 400)
+    return {"message": "Contraseña actualizada. Inicia sesión con tu nueva contraseña."}
+
 @api.get("/me")
 @protected
 def me():
@@ -54,7 +86,10 @@ def me():
 @api.get("/destinations")
 @protected
 def destinations():
-    return jsonify(rows("destinations",g.token,order="city.asc"))
+    records = rows("destinations", g.token, active="eq.true", order="country.asc,city.asc")
+    if request.args.get("scope") != "preparation":
+        records = [item for item in records if item["city"] != item["country"]]
+    return jsonify(records)
 
 @api.post("/tourism/search")
 @protected
@@ -86,6 +121,42 @@ def trips():
 def tasks(trip_id):
     one("trips",v.uuid(trip_id),g.token)
     return jsonify(rows("tasks",g.token,trip_id="eq."+trip_id,order="sort_order.asc"))
+
+@api.patch("/trips/<trip_id>")
+@protected
+def edit_trip(trip_id):
+    trip_id = v.uuid(trip_id)
+    one("trips", trip_id, g.token)
+    payload = {"p_id": trip_id, **v.trip(body())}
+    return jsonify(remote("POST", "/rest/v1/rpc/edit_trip", g.token, payload))
+
+@api.get("/trips/<trip_id>/overview")
+@protected
+def trip_overview(trip_id):
+    return jsonify(overview(g.token, v.uuid(trip_id)))
+
+@api.post("/assistant/messages")
+@protected
+def assistant_message():
+    return jsonify(ask(body(), g.token, g.user["id"]))
+
+@api.post("/assistant/escalate")
+@protected
+def assistant_escalate():
+    data = body()
+    question = v.text(data, "message", 5, 1200)
+    history = history_input(data)
+    transcript = "\n\n".join(("Viajero" if entry["role"] == "user" else "Asistente") +
+                              ": " + entry["content"] for entry in history)
+    description = "Pregunta del viajero:\n" + question
+    if transcript:
+        description += "\n\nContexto del chat aportado por el viajero:\n" + transcript[-3500:]
+    trip_id = v.uuid(data["trip_id"]) if data.get("trip_id") else None
+    if trip_id:
+        one("trips", trip_id, g.token)
+    payload = {"p_request": v.uuid(data.get("request_id")), "p_trip": trip_id,
+               "p_subject": question[:160], "p_description": description}
+    return jsonify(remote("POST", "/rest/v1/rpc/escalate_chat", g.token, payload)), 201
 
 @api.patch("/tasks/<task_id>")
 @protected

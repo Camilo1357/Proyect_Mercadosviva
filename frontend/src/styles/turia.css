@@ -1,0 +1,71 @@
+#turia-widget { position: fixed; right: 24px; bottom: 24px; z-index: 80; font-size: 14px; }
+#turia-widget[hidden], #turia-panel[hidden], #turia-unread[hidden] { display: none; }
+#turia-launcher { display: flex; align-items: center; gap: 12px; margin-left: auto; min-height: 54px; padding: 14px 20px; border: 0; border-radius: 28px; background: var(--nav); color: var(--white); box-shadow: 0 6px 20px #173d4126; }
+#turia-launcher:hover { background: var(--teal); }
+#turia-unread { font-size: 12px; padding-left: 12px; border-left: 1px solid #ffffff70; }
+#turia-panel { display: flex; flex-direction: column; width: 430px; height: min(670px, calc(100dvh - 120px)); margin-bottom: 14px; background: var(--paper); border: 2px solid var(--teal); border-radius: 16px; overflow: hidden; animation: turia-open .24s cubic-bezier(.16,1,.3,1); }
+.turia-header { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--teal); color: var(--white); flex-shrink: 0; }
+.turia-header h2 { margin: 0; font-size: 20px; letter-spacing: -.02em; }
+.turia-header h2 span { color: #a4ded0; }
+.turia-header p { font-size: 12px; margin: 2px 0 0; color: #d8e2df; }
+.turia-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #ffffff50; border-radius: 10px; }
+#turia-close { display: grid; place-items: center; margin-left: auto; width: 44px; height: 44px; background: transparent; color: white; border: 1px solid #ffffff70; border-radius: 12px; }
+#turia-close:hover { background: #ffffff20; }
+.turia-context { border-bottom: 1px solid var(--line); background: var(--white); flex-shrink: 0; }
+.turia-context summary { padding: 9px 16px; font-size: 12px; cursor: pointer; color: var(--teal); font-weight: 600; }
+#turia-panel .assistant-toolbar { padding: 0 20px 16px; border: 0; align-items: stretch; flex-direction: column; gap: 10px; }
+#turia-panel .assistant-toolbar button { align-self: flex-start; padding: 8px 12px; }
+#turia-panel #assistant-body { display: flex; flex-direction: column; min-height: 0; flex: 1; overflow: auto; }
+#turia-panel .chat-log { flex: 1; min-height: 100px; overflow-y: auto; overscroll-behavior: contain; padding: 20px; scrollbar-width: thin; scrollbar-color: var(--muted) var(--paper); }
+#turia-panel .chat-welcome { padding: 10px 0; }
+#turia-panel .chat-welcome h3 { font-size: 18px; margin-bottom: 10px; }
+#turia-panel .chat-welcome p { font-size: 13px; line-height: 1.55; color: var(--muted); }
+#turia-panel .chat-suggestions { gap: 8px; margin-top: 20px; flex-direction: column; align-items: flex-start; }
+#turia-panel .chat-suggestions button { width: 100%; min-height: 44px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+#turia-panel .chat-message { font-size: 13px; margin-bottom: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 4px 16px 16px; background: var(--white); }
+#turia-panel .chat-user { padding: 10px 14px; margin-left: 36px; border-color: var(--teal); border-radius: 16px 4px 16px 16px; background: var(--teal); color: var(--white); }
+#turia-panel .chat-message > strong { font-size: 12px; }
+#turia-panel .chat-message p { margin: 5px 0 0; line-height: 1.55; }
+#turia-panel .chat-user > strong { color: var(--white); }
+#turia-panel .chat-sources { font-size: 12px; padding: 8px 0 0; margin: 10px 0 0; border-top: 1px solid var(--line); list-style: none; overflow-wrap: anywhere; }
+#turia-panel .chat-sources li + li { margin-top: 10px; }
+#turia-panel .chat-sources small { display: block; color: var(--muted); margin-top: 3px; }
+#turia-panel .chat-suggestions { align-items: stretch; }
+#turia-panel .chat-suggestions button:hover { border-color: var(--teal); background: var(--soft); }
+#turia-panel .chat-suggestions svg { width: 16px; height: 16px; flex: none; color: var(--teal); }
+#turia-panel :is(button, summary, a, textarea, select):focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+#turia-panel ::selection { background: var(--soft); color: var(--ink); }
+#turia-panel .chat-composer { background: var(--white); border-top: 1px solid var(--line); padding: 10px 14px; margin: 0; gap: 4px; flex-shrink: 0; }
+#turia-panel .turia-input-row { display: flex; align-items: flex-end; gap: 8px; }
+#turia-panel .turia-input-row textarea { flex: 1; min-width: 0; height: 44px; min-height: 44px; max-height: 104px; border: 0; border-radius: 6px; background: var(--white); padding: 11px 6px; resize: none; font-size: 14px; font-weight: 400; line-height: 22px; }
+#turia-panel .turia-send { flex: none; width: 44px; height: 44px; min-height: 44px; padding: 11px; border-radius: 12px; }
+#turia-panel .turia-send svg { width: 20px; height: 20px; }
+#turia-panel .turia-send:disabled { opacity: .5; cursor: wait; }
+#turia-panel textarea { min-height: 64px; max-height: 130px; font-size: 14px; padding: 12px 14px; border-radius: 12px; caret-color: var(--teal); background: var(--paper); }
+#turia-panel .form-actions { gap: 8px; align-items: center; }
+#turia-panel .form-actions button { font-size: 12px; min-height: 44px; padding: 10px 14px; border-radius: 10px; }
+#turia-panel #assistant-human { justify-self: start; margin-right: auto; min-height: 32px; font-size: 12px; padding: 6px 0; border: 0; color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+#turia-panel .form-error, #turia-panel .chat-confirmation { margin: 10px 16px; font-size: 13px; }
+#turia-panel .is-reviewing .chat-log { display: none; }
+#turia-panel .chat-handoff { padding: 20px; margin: 0; background: transparent; overflow-y: auto; }
+#turia-panel .chat-handoff h2 { font-size: 18px; }
+.turia-footnote { font-size: 11px; color: var(--muted); text-align: center; margin: 0; padding: 4px 14px 10px; background: var(--white); flex-shrink: 0; }
+#turia-panel .chat-wait { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+.turia-dots { display: flex; gap: 4px; flex-shrink: 0; }
+.turia-dots i { width: 5px; height: 5px; background: var(--teal); border-radius: 50%; animation: turia-dot 1.2s ease-in-out infinite; }
+.turia-dots i:nth-child(2) { animation-delay: .15s; }
+.turia-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes turia-open { from { opacity: .4; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes turia-dot { 0%, 70%, 100% { opacity: .4; } 35% { opacity: 1; } }
+@media (max-width: 600px) {
+  #turia-widget { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
+  #turia-panel { width: calc(100vw - 24px); height: min(650px, calc(100dvh - 96px)); margin-bottom: 10px; }
+  #turia-launcher { min-height: 48px; padding: 12px 16px; }
+  .turia-header { padding: 12px 16px; }
+  #turia-panel .chat-log { padding: 16px; }
+  #turia-panel .chat-composer { padding: 12px 14px; }
+  .turia-footnote { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #turia-panel, .turia-dots i { animation: none; }
+}

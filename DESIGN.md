@@ -160,3 +160,7 @@ Los ejemplos del sidecar son muestras visuales aisladas; no incluyen API, autent
 - Don't añadir decoración genérica de IA ni presentar Sprint 2 como disponible.
 - Don't comunicar estados únicamente mediante color.
 - Don't inventar requisitos de viaje o afirmaciones de marca.
+
+### Extensión turIA en el inicio
+
+El alcance actual incluye turIA, un chat no modal desplegable desde un botón flotante inferior derecho. Usa los colores y tipografía existentes, con panel compacto de 410px en escritorio y ancho adaptable en móvil. La cápsula del botón, el panel de 16px y los tamaños compactos son ajustes específicos de este componente. El selector de viaje es plegable, la conversación tiene desplazamiento propio y el campo de entrada permanece visible. Esta extensión actualiza la exclusión histórica de IA descrita en el alcance del sprint 1.

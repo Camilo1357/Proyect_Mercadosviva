@@ -8,3 +8,5 @@ node_modules/
 .vercel/
 .impeccable/questions/
 public/src/
+.impeccable/review/
+supabase/.temp/

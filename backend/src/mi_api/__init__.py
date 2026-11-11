@@ -26,6 +26,7 @@ def create_app(test_config=None):
     app.register_blueprint(api, url_prefix="/api")
     app.extensions["tourism_search"] = SearchState()
     app.extensions["photo_limits"] = SearchState(per_user=12, per_worker=60)
+    app.extensions["assistant_limits"] = SearchState(per_user=8, per_worker=40)
 
     @app.get("/")
     def index():

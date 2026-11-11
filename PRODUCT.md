@@ -5,7 +5,7 @@
 web
 
 ## Stack
-JavaScript, HTML y CSS; Flask/Python; Supabase Auth y PostgreSQL; despliegue Vercel. LangChain se incorporará en Sprint 2.
+JavaScript, HTML y CSS; Flask/Python; Supabase Auth y PostgreSQL; despliegue Vercel. LangChain conecta el asistente con OpenAI en Sprint 2.
 
 ## Users
 Viajeros que preparan un viaje y agentes que atienden solicitudes. Agentes con permiso editorial administran contenidos.
@@ -23,7 +23,7 @@ Modulo_2_Historias_y_Backlog.docx, Fundamentos.drawio y tablero Miro uXjVEbvFcMs
 Interfaz en español, lectura clara, identidad propia y sin decoración genérica de IA. Se mantiene el logo existente como activo del proyecto; nombre de producto descriptivo Centro del viajero.
 
 ## Open decisions
-Proveedor LLM y embeddings para Sprint 2. Canal de alertas inicial dentro de la aplicación. No incluir datos legales de viaje sin fuentes y revisión editorial.
+OpenAI con el modelo configurado en .env y recuperación textual de guías publicadas. Canal de alertas inicial dentro de la aplicación. No incluir datos legales de viaje sin fuentes y revisión editorial.
 
 ## Acceso actualizado
 Por solicitud del usuario, el viajero entra sin login. Sesiones anónimas aisladas de Supabase; continuidad en el mismo navegador. Solo el equipo de atención mantiene acceso autenticado separado.

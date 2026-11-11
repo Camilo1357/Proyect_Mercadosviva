@@ -1,6 +1,6 @@
 # Chambiray · Centro del viajero
 
-Sprint 1 del centro digital de orientación y preparación del viajero.
+Sprints 1 y 2 del centro digital de orientación y preparación del viajero.
 Frontend JavaScript, HTML y CSS; API Flask; autenticación y base PostgreSQL en Supabase.
 El logo original del repositorio se conserva sin modificaciones.
 
@@ -108,5 +108,4 @@ No se ha hecho commit ni push: los cambios están en tu carpeta local.
 
 ## Sprint 2
 
-Edición de viajes, recomendaciones, alertas y chatbot LangChain con fuentes y escalamiento.
-No se han implementado en este sprint.
+El asistente con LangChain, edición de viajes, recomendaciones, alertas y envío a atención humana están descritos en [docs/sprint-2.md](docs/sprint-2.md). Instala las dependencias de `requirements.lock` antes de iniciar esta versión.

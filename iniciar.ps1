@@ -4,7 +4,7 @@ if (-not (Test-Path -LiteralPath '.venv/Scripts/python.exe')) {
     python -m venv .venv
     if ($LASTEXITCODE -ne 0) { throw 'No se pudo crear el entorno Python.' }
 }
-& '.venv/Scripts/python.exe' -c 'import flask, requests, dotenv'
+& '.venv/Scripts/python.exe' -c 'import flask, requests, dotenv, langchain_openai'
 if ($LASTEXITCODE -ne 0) {
     & '.venv/Scripts/python.exe' -m pip install -r requirements.lock
     if ($LASTEXITCODE -ne 0) { throw 'No se pudieron instalar las dependencias.' }
